@@ -22,7 +22,7 @@ RSpec.describe 'index.html' do
     nested_children = subchildren.select {|sc| sc.children.any? {|ch| ch.name == "ul"}}.select {|sc| sc.children.length > 1}
 
     expect(nested_ul).to be ==  true
-    expect(nested_children['0'].children['1'].children.length).to be >= ('3'), "Make sure to list out the three cheese types in the nested list"
+    expect(nested_children[0].children[1].children.length).to be >= (3), "Make sure to list out the three cheese types in the nested list"
   end
 
   it 'contains a <ol> tag' do
