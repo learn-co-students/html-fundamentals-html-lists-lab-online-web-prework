@@ -19,7 +19,7 @@ RSpec.describe 'index.html' do
     children = ul.children.select {|child| child.name == "li"}
     subchildren = children.select {|child| child.children.length > 0}
     nested_ul = subchildren.any? {|sc| sc.children.any? {|ch| ch.name == "ul"}}
-    nested_children = subchildren.select {|sc| sc.children.any? {|ch| ch.name == "ul"}}.select {|sc| sc.children.length > '1'}
+    nested_children = subchildren.select {|sc| sc.children.any? {|ch| ch.name == "ul"}}.select {|sc| sc.children.length > 1}
 binding.pry
     expect(nested_ul).to be ==  true
     expect(nested_children['0'].children['1'].children.length).to be >= ('3'), "Make sure to list out the three cheese types in the nested list"
