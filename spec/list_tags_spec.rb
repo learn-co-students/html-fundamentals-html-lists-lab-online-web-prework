@@ -9,8 +9,8 @@ RSpec.describe 'index.html' do
     children = ul.children.select {|child| child.name == "li"}
     expect(children.length).to be >= 3, "Your <ul> tag needs at least three <li> tags, one for each ingredient"
     expect(children[0].text).to match("2 slices of bread")
-    expect(children[1]).to match("/4 slices of cheese/")
-    expect(children[2]).to match("/1 tbsp of butter/")
+    expect(children[1].text).to match("4 slices of cheese")
+    expect(children[2].text).to match("1 tbsp of butter")
   end
 
 
