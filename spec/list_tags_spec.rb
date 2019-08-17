@@ -31,12 +31,12 @@ RSpec.describe 'index.html' do
     expect(html_file_contents).to include('</ol>'), "Don't forget to include a closing </ol>"
 
     children = ol.children.select {|child| child.name == "li"}
-    expect(children.length).to be >= 5, "Your <ol> tag needs at least three nested <li> tags"
-    expect(children[0]).to match("/Spread butter on bread and frying pan/")
-    expect(children[1]).to match("/Place bread in frying pan and fry/")
-    expect(children[2]).to match("/Add cheese on top of bread/")
-    expect(children[3]).to match("/Cover with second slice of bread/")
-    expect(children[4]).to match("/Turn over and fry for 2 minutes/")
+    expect(children.length).to be >= 5
+    expect(children[0].text).to match("/Spread butter on bread and frying pan/")
+    expect(children[1].text).to match("/Place bread in frying pan and fry/")
+    expect(children[2].text).to match("/Add cheese on top of bread/")
+    expect(children[3].text).to match("/Cover with second slice of bread/")
+    expect(children[4].text).to match("/Turn over and fry for 2 minutes/")
 
   end
 end
